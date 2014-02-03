@@ -1,6 +1,8 @@
+$homecolor: #262524;
+$bodyfont: 'Open Sans', sans-serif;
+
 #home {
-	/*background: url(molecules.jpg) no-repeat center center fixed;*/
-	background-color: navy; 
+	background: url(atom_array.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -10,19 +12,47 @@
 
 	.jumbotron {
 		background-color: transparent;
-		color: #fff;
+		color: $homecolor;
 		margin-top: 10%;
 
 		h1 {
 			font-family: 'Roboto Condensed', sans-serif;
-			font-size: 5.3em;
+			font-size: 4.7em;
 			font-weight: 800;
 			text-transform: uppercase;
 		}
 		
 		p {
-			font-family: 'Open Sans', sans-serif;
-			font-size: 2.3em;
+			font-family: $bodyfont;
+			font-size: 1.4em;
 		}
+
+		.button {
+
+			margin-top: 5%;
+
+			a, a:visited {
+				text-decoration: none;
+				border: 2px $homecolor solid;
+				color: $homecolor;
+				padding: 13px 25px 13px 25px;
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				border-radius: 10px;
+				text-transform: uppercase;
+				font-family: $bodyfont;
+				font-size: .81em;
+				-webkit-transition: all .2s ease-in-out;
+				-moz-transition: all .2s ease-in-out;
+				transition: all .2s ease-in-out;
+				&:hover {
+					background-color: $homecolor;
+					color: #fff;
+				}
+			}
+
+		}
+
+
 	}
 }
