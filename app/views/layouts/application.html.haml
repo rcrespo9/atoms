@@ -1,6 +1,7 @@
 !!!
 %html
   %head
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}
     %title Proton Playground
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     %link{:href => "//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css", :rel => "stylesheet"}
@@ -9,7 +10,6 @@
   %body
     = yield
     = javascript_include_tag "application", "data-turbolinks-track" => true
-    %script{:src => "//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"}
     %script{:src => "//cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"}
     %script{:src => "//cdnjs.cloudflare.com/ajax/libs/d3/2.7.4/d3.geom.min.js"}
     %script{:src => "//cdnjs.cloudflare.com/ajax/libs/d3/2.7.4/d3.layout.min.js"}

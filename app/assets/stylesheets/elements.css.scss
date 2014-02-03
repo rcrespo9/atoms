@@ -1,3 +1,10 @@
+$media: screen;
+$feature-max: max-width;
+$feature-min: min-width;
+$tablet-min: 768px;
+$tablet-max: 1024px;
+$phone-min: 320px;
+$phone-max: 480px;
 $homecolor: #262524;
 $bodyfont: 'Open Sans', sans-serif;
 
@@ -28,9 +35,7 @@ $bodyfont: 'Open Sans', sans-serif;
 		}
 
 		.button {
-
 			margin-top: 5%;
-
 			a, a:visited {
 				text-decoration: none;
 				border: 2px $homecolor solid;
@@ -41,7 +46,7 @@ $bodyfont: 'Open Sans', sans-serif;
 				border-radius: 10px;
 				text-transform: uppercase;
 				font-family: $bodyfont;
-				font-size: .81em;
+				font-size: .8em;
 				-webkit-transition: all .2s ease-in-out;
 				-moz-transition: all .2s ease-in-out;
 				transition: all .2s ease-in-out;
@@ -52,7 +57,6 @@ $bodyfont: 'Open Sans', sans-serif;
 			}
 
 		}
-
 
 	}
 }
