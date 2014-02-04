@@ -75,4 +75,3 @@ production:
         read: :primary
         max_retries: 30
         retry_interval: 1
-        timeout: 30
