@@ -4,6 +4,7 @@ class ElementsController < ApplicationController
 	end
 
 	def playground
+		@elements = Element.all
 	end
 	
 end
