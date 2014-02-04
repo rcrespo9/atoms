@@ -29,14 +29,6 @@ development:
         # retry_interval: 1
   # Configure Mongoid specific options. (optional)
   options:
-  production:
-  sessions:
-    default:
-      uri: <%= ENV['MONGOHQ_URL'] %>
-      options:
-        consistency: :strong
-        max_retries: 1
-        retry_interval: 0
     # Includes the root model name in json serialization. (default: false)
     # include_root_in_json: false
 
@@ -75,4 +67,12 @@ test:
         # low amounts for fast failures.
         max_retries: 1
         retry_interval: 0
-
+production:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOLAB_URI'] %>
+      options:
+        read: :primary
+        max_retries: 30
+        retry_interval: 1
+        timeout: 30
