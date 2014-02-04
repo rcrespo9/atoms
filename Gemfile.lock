@@ -52,6 +52,8 @@ GEM
     execjs (2.0.2)
     haml (4.0.5)
       tilt
+    heroku_rails_deflate (0.2.0)
+      rack (~> 1.5.0)
     hike (1.2.3)
     httparty (0.12.0)
       json (~> 1.8)
@@ -156,6 +158,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   haml
+  heroku_rails_deflate
   httparty
   jbuilder (~> 1.2)
   jquery-rails
