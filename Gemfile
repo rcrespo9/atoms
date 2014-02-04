@@ -7,6 +7,10 @@ gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 
 gem 'haml'
 
+gem 'json'
+
+gem 'httparty'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
 end
