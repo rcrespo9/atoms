@@ -4,7 +4,7 @@ class ElementsController < ApplicationController
 	end
 
 	def playground
-		@elements = Element.all
+		@elements = Element.order('atomic_number ASC').all
 	end
 	
 end
