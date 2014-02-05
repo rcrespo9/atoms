@@ -8,6 +8,7 @@ $phone-max: 480px;
 $homecolor: #262524;
 $bodyfont: 'Open Sans', sans-serif;
 
+/******landing page******/
 #home {
 	background: url(atom_array.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -36,6 +37,7 @@ $bodyfont: 'Open Sans', sans-serif;
 
 		.button {
 			margin-top: 5%;
+
 			a, a:visited {
 				text-decoration: none;
 				border: 2px $homecolor solid;
@@ -50,6 +52,7 @@ $bodyfont: 'Open Sans', sans-serif;
 				-webkit-transition: all .2s ease-in-out;
 				-moz-transition: all .2s ease-in-out;
 				transition: all .2s ease-in-out;
+				
 				&:hover {
 					background-color: $homecolor;
 					color: #fff;
@@ -58,5 +61,13 @@ $bodyfont: 'Open Sans', sans-serif;
 
 		}
 
+	}
+}
+/******landing page end******/
+
+/******playground******/
+td.chemical {
+	&:hover {
+		cursor: pointer;
 	}
 }
