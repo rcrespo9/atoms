@@ -1,39 +1,64 @@
-%table.table
-	%tbody
-	- (@elements[0..55]).each do |element|
-		%tr
-			%td= element.name
-			%td= element.symbol
-			%td= element.atomic_number
-			%td= element.atomic_weight
-	- (@elements[71..87]).each do |element|
-		%tr
-			%td= element.name
-			%td= element.symbol
-			%td= element.atomic_number
-			%td= element.atomic_weight
-	- (@elements[103..117]).each do |element|
-		%tr
-			%td= element.name
-			%td= element.symbol
-			%td= element.atomic_number
-			%td= element.atomic_weight
+.container-fluid
+	.row
+		.col-lg-12
+			%table.table
+				%tbody
+					%tr
+						%td= @elements[0].symbol
+						- 16.times do |tag|
+							%td
+						%td= @elements[1].symbol
 
-<br>
-%table.table
-	%tbody
-	- (@elements[56..70]).each do |element|
-		%tr
-			%td= element.name
-			%td= element.symbol
-			%td= element.atomic_number
-			%td= element.atomic_weight
-	- (@elements[88..102]).each do |element|
-		%tr
-			%td= element.name
-			%td= element.symbol
-			%td= element.atomic_number
-			%td= element.atomic_weight
+					%tr
+						%td= @elements[2].symbol
+						%td= @elements[3].symbol
+						-10.times do |tag|
+							%td
+						- (@elements[4..9]).each do |element|	
+							%td= element.symbol
+
+					%tr
+						%td= @elements[10].symbol
+						%td= @elements[11].symbol
+						-10.times do |tag|
+							%td
+						-(@elements[12..17]).each do |element|
+							%td= element.symbol
+
+					%tr
+						-(@elements[18..35]).each do |element|
+							%td= element.symbol
+
+					%tr
+						-(@elements[36..53]).each do |element|
+							%td= element.symbol
+
+					%tr
+						%td= @elements[54].symbol
+						%td= @elements[55].symbol
+						%td La-Lu
+						- (@elements[71..85]).each do |element|
+							%td= element.symbol
+
+					%tr
+						%td= @elements[86].symbol
+						%td= @elements[87].symbol
+						%td Ac-Lr
+						- (@elements[103..117]).each do |element|
+							%td= element.symbol				
+
+
+
+			<br>
+			%table.table
+				%tbody
+					%tr
+					- (@elements[56..70]).each do |element|
+						%td= element.symbol
+						
+					%tr
+					- (@elements[88..102]).each do |element|
+						%td= element.symbol
 
 
 		
