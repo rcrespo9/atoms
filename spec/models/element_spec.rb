@@ -5,7 +5,7 @@ describe Element do
 		@valid_name = "Hydrogen"
 		@valid_symbol = "H"
 		@valid_atomic_number = 1
-		@valid_atomic_weight = 1.00794
+		@valid_atomic_weight = "1.00794"
 		@element = Element.create(name: @valid_name, symbol: @valid_symbol, atomic_number: @valid_atomic_number, atomic_weight: @valid_atomic_weight)
 		
 	end

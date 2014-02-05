@@ -1,8 +1,39 @@
-- (@elements).each do |element|
-	%ul
-		%li= element.name
-		%li= element.symbol
-		%li= element.atomic_number
-		%li= element.atomic_weight
+%table.table
+	%tbody
+	- (@elements[0..55]).each do |element|
+		%tr
+			%td= element.name
+			%td= element.symbol
+			%td= element.atomic_number
+			%td= element.atomic_weight
+	- (@elements[71..87]).each do |element|
+		%tr
+			%td= element.name
+			%td= element.symbol
+			%td= element.atomic_number
+			%td= element.atomic_weight
+	- (@elements[103..117]).each do |element|
+		%tr
+			%td= element.name
+			%td= element.symbol
+			%td= element.atomic_number
+			%td= element.atomic_weight
+
+<br>
+%table.table
+	%tbody
+	- (@elements[56..70]).each do |element|
+		%tr
+			%td= element.name
+			%td= element.symbol
+			%td= element.atomic_number
+			%td= element.atomic_weight
+	- (@elements[88..102]).each do |element|
+		%tr
+			%td= element.name
+			%td= element.symbol
+			%td= element.atomic_number
+			%td= element.atomic_weight
+
 
 		
