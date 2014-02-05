@@ -1,64 +1,62 @@
-.container-fluid
-	.row
-		.col-lg-12
-			%table.table
-				%tbody
-					%tr
-						%td{class: "chemical", data: {position: @elements[0].atomic_number}}= @elements[0].symbol
-						- 16.times do |tag|
-							%td
-						%td{class: "chemical", data: {position: @elements[1].atomic_number}}= @elements[1].symbol
+%body#playground
+	.container-fluid
+		.row
+			.periodic-table.col-lg-12
+				%table.main-elements
+					%tbody
+						%tr
+							%td{class: "chemical", data: {position: @elements[0].atomic_number}}= @elements[0].symbol
+							- 16.times do |tag|
+								%td{class: "empty-cell"}
+							%td{class: "chemical", data: {position: @elements[1].atomic_number}}= @elements[1].symbol
 
-					%tr
-						%td{class: "chemical", data: {position: @elements[2].atomic_number}}= @elements[2].symbol
-						%td{class: "chemical", data: {position: @elements[3].atomic_number}}= @elements[3].symbol
-						-10.times do |tag|
-							%td
-						- (@elements[4..9]).each do |element|	
+						%tr
+							%td{class: "chemical", data: {position: @elements[2].atomic_number}}= @elements[2].symbol
+							%td{class: "chemical", data: {position: @elements[3].atomic_number}}= @elements[3].symbol
+							-10.times do |tag|
+								%td{class: "empty-cell"}
+							- (@elements[4..9]).each do |element|	
+								%td{class: "chemical", data: {position: element.atomic_number}}= element.symbol
+
+						%tr
+							%td{class: "chemical", data: {position: @elements[10].atomic_number}}= @elements[10].symbol
+							%td{class: "chemical", data: {position: @elements[11].atomic_number}}= @elements[11].symbol
+							-10.times do |tag|
+								%td{class: "empty-cell"}
+							-(@elements[12..17]).each do |element|
+								%td{class: "chemical", data: {position: element.atomic_number}}= element.symbol
+
+						%tr
+							-(@elements[18..35]).each do |element|
+								%td{class: "chemical", data: {position: element.atomic_number}}= element.symbol
+
+						%tr
+							-(@elements[36..53]).each do |element|
+								%td{class: "chemical", data: {position: element.atomic_number}}= element.symbol
+
+						%tr
+							%td{class: "chemical", data: {position: @elements[54].atomic_number}}= @elements[54].symbol
+							%td{class: "chemical", data: {position: @elements[55].atomic_number}}= @elements[55].symbol
+							%td Lant
+							- (@elements[71..85]).each do |element|
+								%td{class: "chemical", data: {position: element.atomic_number}}= element.symbol
+
+						%tr
+							%td{class: "chemical", data: {position: @elements[86].atomic_number}}= @elements[86].symbol
+							%td{class: "chemical", data: {position: @elements[87].atomic_number}}= @elements[87].symbol
+							%td Acti
+							- (@elements[103..117]).each do |element|
+								%td{class: "chemical", data: {position: element.atomic_number}}= element.symbol				
+
+				%table.other-elements
+					%tbody
+						%tr
+						- (@elements[56..70]).each do |element|
 							%td{class: "chemical", data: {position: element.atomic_number}}= element.symbol
-
-					%tr
-						%td{class: "chemical", data: {position: @elements[10].atomic_number}}= @elements[10].symbol
-						%td{class: "chemical", data: {position: @elements[11].atomic_number}}= @elements[11].symbol
-						-10.times do |tag|
-							%td
-						-(@elements[12..17]).each do |element|
+							
+						%tr
+						- (@elements[88..102]).each do |element|
 							%td{class: "chemical", data: {position: element.atomic_number}}= element.symbol
-
-					%tr
-						-(@elements[18..35]).each do |element|
-							%td{class: "chemical", data: {position: element.atomic_number}}= element.symbol
-
-					%tr
-						-(@elements[36..53]).each do |element|
-							%td{class: "chemical", data: {position: element.atomic_number}}= element.symbol
-
-					%tr
-						%td{class: "chemical", data: {position: @elements[54].atomic_number}}= @elements[54].symbol
-						%td{class: "chemical", data: {position: @elements[55].atomic_number}}= @elements[55].symbol
-						%td La-Lu
-						- (@elements[71..85]).each do |element|
-							%td{class: "chemical", data: {position: element.atomic_number}}= element.symbol
-
-					%tr
-						%td{class: "chemical", data: {position: @elements[86].atomic_number}}= @elements[86].symbol
-						%td{class: "chemical", data: {position: @elements[87].atomic_number}}= @elements[87].symbol
-						%td Ac-Lr
-						- (@elements[103..117]).each do |element|
-							%td{class: "chemical", data: {position: element.atomic_number}}= element.symbol				
-
-
-
-			<br>
-			%table.table
-				%tbody
-					%tr
-					- (@elements[56..70]).each do |element|
-						%td{class: "chemical", data: {position: element.atomic_number}}= element.symbol
-						
-					%tr
-					- (@elements[88..102]).each do |element|
-						%td{class: "chemical", data: {position: element.atomic_number}}= element.symbol
 
 
 		
