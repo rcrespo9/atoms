@@ -6,7 +6,7 @@ $tablet-max: 1024px;
 $phone-min: 320px;
 $phone-max: 480px;
 $homecolor: #262524;
-$transparentcolor: rgba(49,48,50,0.8);
+$transparentcolor: rgba(34,34,34,0.8);
 $bodyfont: 'Open Sans', sans-serif;
 
 /******landing page******/
@@ -49,6 +49,7 @@ $bodyfont: 'Open Sans', sans-serif;
 				border-radius: 10px;
 				text-transform: uppercase;
 				font-family: $bodyfont;
+				font-weight: 400;
 				font-size: .8em;
 				-webkit-transition: all .2s ease-in-out;
 				-moz-transition: all .2s ease-in-out;
@@ -70,16 +71,17 @@ $bodyfont: 'Open Sans', sans-serif;
 #playground {
 	.periodic-table {
 		font-family: $bodyfont;
+		font-weight: 600;
 
 		table {
 			margin-left: auto;
 			margin-right: auto;
-			border-spacing: 3px;
+			border-spacing: 4px;
 			border-collapse: separate;
 		}
 
 		table.main-elements {
-			margin-bottom: 3%;
+			margin-bottom: 1%;
 		}
 
 		td {

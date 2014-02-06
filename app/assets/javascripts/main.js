@@ -35,7 +35,7 @@ var playground = $('td.chemical').click(function() {
 	  for (i = 1; i < n; ++i) q.visit(collide(nodes[i]));
 
 	  context.clearRect(0, 0, width, height);
-	  context.fillStyle = "steelblue";
+	  context.fillStyle = "grey";
 	  context.beginPath();
 	  for (i = 1; i < n; ++i) {
 	    d = nodes[i];
