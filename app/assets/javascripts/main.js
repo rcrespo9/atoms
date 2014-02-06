@@ -1,4 +1,4 @@
-$('td.chemical').click(function() {
+var playground = $('td.chemical').click(function() {
 
 	d3.select('canvas').remove();
 

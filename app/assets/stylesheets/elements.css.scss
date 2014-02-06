@@ -6,6 +6,7 @@ $tablet-max: 1024px;
 $phone-min: 320px;
 $phone-max: 480px;
 $homecolor: #262524;
+$transparentcolor: rgba(49,48,50,0.8);
 $bodyfont: 'Open Sans', sans-serif;
 
 /******landing page******/
@@ -68,19 +69,30 @@ $bodyfont: 'Open Sans', sans-serif;
 /******playground******/
 #playground {
 	.periodic-table {
+		font-family: $bodyfont;
+
+		table {
+			margin-left: auto;
+			margin-right: auto;
+			border-spacing: 3px;
+			border-collapse: separate;
+		}
 
 		table.main-elements {
 			margin-bottom: 3%;
 		}
 
-		td:not(.empty-cell) {
+		td {
 			width: 52px;
 			height: 52px;
-			border: 1px solid rgba(0,0,0,0.3);
-			font-size: 1em;
-			cursor: pointer;
-			text-align: center;
-			text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+			&:not(.empty-cell) {
+				background-color: $transparentcolor;
+				color: #fff;
+				border: 1px solid $transparentcolor;
+				font-size: 1em;
+				cursor: pointer;
+				text-align: center;
+			}
 		}
 	}	
 }
