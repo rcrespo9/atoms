@@ -1,5 +1,13 @@
-var playground = $('td.chemical').click(function() {
+$('button').click(function() {
+	$('.periodic-table').fadeIn('fast');
+	d3.select('canvas').remove();
+	$('button').fadeOut('fast');
+})
 
+$('td.chemical').click(function() {
+
+	$('.periodic-table').fadeOut('fast');
+	$('button').fadeIn('fast');
 	d3.select('canvas').remove();
 
 	var width = 960,
