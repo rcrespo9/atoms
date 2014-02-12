@@ -3,6 +3,7 @@
 		%button New Element
 		.row
 			.atoms
+			.info.pull-left
 		.row
 			.periodic-table.col-lg-12
 				%table.main-elements
@@ -10,78 +11,78 @@
 
 						/ first row
 						%tr
-							%td{class: "chemical", data: {attribute: @elements[0].atomic_number}}= @elements[0].symbol
+							%td{class: "chemical", data: {attribute: @elements[0].atomic_number, name: @elements[0].name, symbol: @elements[0].symbol, weight: @elements[0].atomic_weight}}= @elements[0].symbol
 
 							- 16.times do |tag|
 								%td{class: "empty-cell"}
 
-							%td{class: "chemical", data: {attribute: @elements[1].atomic_number}}= @elements[1].symbol
+							%td{class: "chemical", data: {attribute: @elements[1].atomic_number, name: @elements[1].name, symbol: @elements[1].symbol, weight: @elements[1].atomic_weight}}= @elements[1].symbol
 
 						/ second row	
 						%tr
-							%td{class: "chemical", data: {attribute: @elements[2].atomic_number}}= @elements[2].symbol
+							%td{class: "chemical", data: {attribute: @elements[2].atomic_number, name: @elements[2].name, symbol: @elements[2].symbol, weight: @elements[2].atomic_weight}}= @elements[2].symbol
 
-							%td{class: "chemical", data: {attribute: @elements[3].atomic_number}}= @elements[3].symbol
+							%td{class: "chemical", data: {attribute: @elements[3].atomic_number, name: @elements[3].name, symbol: @elements[3].symbol, weight: @elements[3].atomic_weight}}= @elements[3].symbol
 
 							-10.times do |tag|
 								%td{class: "empty-cell"}
 
 							- (@elements[4..9]).each do |element|	
-								%td{class: "chemical", data: {attribute: element.atomic_number}}= element.symbol
+								%td{class: "chemical", data: {attribute: element.atomic_number, name: element.name, symbol: element.symbol, weight: element.atomic_weight}}= element.symbol
 
 						/ third row		
 						%tr
-							%td{class: "chemical", data: {attribute: @elements[10].atomic_number}}= @elements[10].symbol
+							%td{class: "chemical", data: {attribute: @elements[10].atomic_number, name: @elements[10].name, symbol: @elements[10].symbol, weight: @elements[10].atomic_weight}}= @elements[10].symbol
 
-							%td{class: "chemical", data: {attribute: @elements[11].atomic_number}}= @elements[11].symbol
+							%td{class: "chemical", data: {attribute: @elements[11].atomic_number, name: @elements[11].name, symbol: @elements[11].symbol, weight: @elements[11].atomic_weight}}= @elements[11].symbol
 
 							-10.times do |tag|
 								%td{class: "empty-cell"}
 
 							-(@elements[12..17]).each do |element|
-								%td{class: "chemical", data: {attribute: element.atomic_number}}= element.symbol
+								%td{class: "chemical", data: {attribute: element.atomic_number, name: element.name, symbol: element.symbol, weight: element.atomic_weight}}= element.symbol
 
 						/ fourth row		
 						%tr
 							-(@elements[18..35]).each do |element|
-								%td{class: "chemical", data: {attribute: element.atomic_number}}= element.symbol
+								%td{class: "chemical", data: {attribute: element.atomic_number, name: element.name, symbol: element.symbol, weight: element.atomic_weight}}= element.symbol
 
 						/ fifth row		
 						%tr
 							-(@elements[36..53]).each do |element|
-								%td{class: "chemical", data: {attribute: element.atomic_number}}= element.symbol
+								%td{class: "chemical", data: {attribute: element.atomic_number, name: element.name, symbol: element.symbol, weight: element.atomic_weight}}= element.symbol
 
 						/ sixth row		
 						%tr
-							%td{class: "chemical", data: {attribute: @elements[54].atomic_number}}= @elements[54].symbol
+							%td{class: "chemical", data: {attribute: @elements[54].atomic_number, name: @elements[54].name, symbol: @elements[54].symbol, weight: @elements[54].atomic_weight}}= @elements[54].symbol
 
-							%td{class: "chemical", data: {attribute: @elements[55].atomic_number}}= @elements[55].symbol
+							%td{class: "chemical", data: {attribute: @elements[55].atomic_number, name: @elements[55].name, symbol: @elements[55].symbol, weight: @elements[55].atomic_weight}}= @elements[55].symbol
 
 							%td Lant
 
 							- (@elements[71..85]).each do |element|
-								%td{class: "chemical", data: {attribute: element.atomic_number}}= element.symbol
+								%td{class: "chemical", data: {attribute: element.atomic_number, name: element.name, symbol: element.symbol, weight: element.atomic_weight}}= element.symbol
 
 						/ seventh row		
 						%tr
-							%td{class: "chemical", data: {attribute: @elements[86].atomic_number}}= @elements[86].symbol
+							%td{class: "chemical", data: {attribute: @elements[86].atomic_number, name: @elements[86].name, symbol: @elements[86].symbol, weight: @elements[86].atomic_weight}}= @elements[86].symbol
 
-							%td{class: "chemical", data: {attribute: @elements[87].atomic_number}}= @elements[87].symbol
+							%td{class: "chemical", data: {attribute: @elements[87].atomic_number, name: @elements[87].name, symbol: @elements[87].symbol, weight: @elements[87].atomic_weight}}= @elements[87].symbol
 
 							%td Acti
 							
 							- (@elements[103..117]).each do |element|
-								%td{class: "chemical", data: {attribute: element.atomic_number}}= element.symbol				
+								%td{class: "chemical", data: {attribute: element.atomic_number, name: element.name, symbol: element.symbol, weight: element.atomic_weight}}= element.symbol				
 
 				%table.other-elements
 					%tbody
 						%tr
 						- (@elements[56..70]).each do |element|
-							%td{class: "chemical", data: {attribute: element.atomic_number}}= element.symbol
+							%td{class: "chemical", data: {attribute: element.atomic_number, name: element.name, symbol: element.symbol, weight: element.atomic_weight}}= element.symbol
 							
 						%tr
 						- (@elements[88..102]).each do |element|
-							%td{class: "chemical", data: {attribute: element.atomic_number}}= element.symbol
+							%td{class: "chemical", data: {attribute: element.atomic_number, name: element.name, symbol: element.symbol, weight: element.atomic_weight}}= element.symbol
 
 
 		

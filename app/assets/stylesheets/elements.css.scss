@@ -6,7 +6,7 @@ $tablet-max: 1024px;
 $phone-min: 320px;
 $phone-max: 480px;
 $homecolor: #262524;
-$transparentcolor: rgba(34,34,34,0.8);
+$transparentcolor: rgba(0,0,0,0.9);
 $bodyfont: 'Open Sans', sans-serif;
 
 html, body {
@@ -90,6 +90,7 @@ html, body {
 
 	.periodic-table {
 		font-family: $bodyfont;
+		font-size: 1.1em;
 		font-weight: 600;
 		position: absolute;
 		bottom: 0;
@@ -111,7 +112,8 @@ html, body {
 			&:not(.empty-cell) {
 				background-color: $transparentcolor;
 				color: #fff;
-				border: 1px solid $transparentcolor;
+				border: 1px solid #000;
+				border-radius: 5px;
 				font-size: 1em;
 				cursor: pointer;
 				text-align: center;

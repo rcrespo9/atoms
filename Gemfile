@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.2'
 
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 
@@ -15,6 +15,7 @@ gem 'httparty'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'jasmine'
 end
 
 group :production do

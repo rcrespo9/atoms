@@ -2,19 +2,28 @@ $('button').click(function() {
 	$('.periodic-table').fadeIn('fast');
 	d3.select('canvas').remove();
 	$('button').fadeOut('fast');
+	$('.details').remove();
 })
 
 $('td.chemical').click(function() {
+	var width = 960,
+	    height = 500,
+	    atomic_number = $(this).data('attribute'),
+	    symbol = $(this).data('symbol'),
+	    name = $(this).data('name'),
+	    atomic_weight = $(this).data('weight');
 
 	$('.periodic-table').fadeOut('fast');
 	$('button').fadeIn('fast');
+	$('.info').append(
+		'<p class="details">' + atomic_number + '</p>', 
+		'<p class="details">' + symbol + '</p>',
+		'<p class="details">' + name + '</p>',
+		'<p class="details">' + atomic_weight + '</p>'
+	);
 	d3.select('canvas').remove();
 
-	var width = 960,
-	    height = 500,
-	    atomic_weight = $(this).data('attribute');
-
-	var nodes = d3.range(atomic_weight + 1).map(function() { return {radius: Math.random() * 12 + 4}; }),
+	var nodes = d3.range(atomic_number + 1).map(function() { return {radius: Math.random() * 12 + 4}; }),
 	    root = nodes[0];
 
 	root.radius = 0;
