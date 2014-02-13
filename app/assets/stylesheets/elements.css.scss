@@ -5,11 +5,12 @@ $tablet-min: 768px;
 $tablet-max: 1024px;
 $phone-min: 320px;
 $phone-max: 480px;
-$homecolor: #262524;
+$homecolor: #2d2c2c;
 $transparentcolor: rgba(0,0,0,0.9);
 $headerfont: 'Roboto Condensed', sans-serif;
 $headerweight: 800;
 $bodyfont: 'Open Sans', sans-serif;
+$bodycolor: #fff;
 $bodyweight: 400;
 
 html, body {
@@ -56,6 +57,7 @@ html, body {
 				-webkit-border-radius: 10px;
 				-moz-border-radius: 10px;
 				border-radius: 10px;
+				letter-spacing: .1em;
 				text-transform: uppercase;
 				font-family: $bodyfont;
 				font-weight: $bodyweight;
@@ -66,7 +68,7 @@ html, body {
 				
 				&:hover {
 					background-color: $homecolor;
-					color: #fff;
+					color: $bodycolor;
 				}
 			}
 
@@ -78,18 +80,32 @@ html, body {
 
 /******playground******/
 #playground {
-	.navbar-brand {
-		font-family: $headerfont;
-		font-weight: $headerweight;
-		text-transform: uppercase;
+	.navbar-default {
+		background-color: $homecolor;
+		min-height: 72px;
+
+		a {
+			color: $bodycolor;
+			line-height: 50px;
+		}
+
+		.navbar-brand {
+			font-family: $headerfont;
+			font-size: 1.6em;
+			font-weight: $headerweight;
+			text-transform: uppercase;
+		}
+
+		.navbar-nav {
+			font-family: $bodyfont;
+			font-weight: $bodyweight;
+			font-size: .9em;
+			text-transform: uppercase;
+			letter-spacing: .1em;
+		}
 	}
 
-	.navbar-nav {
-		font-family: $bodyfont;
-		font-weight: $bodyweight;
-	}
-
-	button {
+	.new-element {
 		display: none;
 	}
 	.atoms {
@@ -125,9 +141,9 @@ html, body {
 			width: 52px;
 			height: 52px;
 			&:not(.empty-cell) {
-				background-color: $transparentcolor;
-				color: #fff;
-				border: 1px solid #000;
+				background-color: $homecolor;
+				color: $bodycolor;
+				border: 1px solid $homecolor;
 				border-radius: 5px;
 				font-size: 1em;
 				cursor: pointer;
@@ -135,4 +151,18 @@ html, body {
 			}
 		}
 	}	
+}
+
+/*instructions modal*/
+.modal-content {
+	.modal-title {
+		font-family: $headerfont;
+		font-weight: $headerweight;
+		text-transform: uppercase;
+	}
+
+	.modal-body {
+		font-family: $bodyfont;
+		font-weight: $bodyweight;
+	}
 }

@@ -1,8 +1,8 @@
 %body#playground
-	.navbar.navbar-inverse.navbar-static-top{role: "navigation"}
-		.container-fluid
+	%nav.navbar.navbar-default.navbar-static-top{role: "navigation"}
+		.container
 			.navbar-header
-				%button.navbar-toggle{type: 'button', data: {target: '.navbar-collapse', toggle: "collapse"}}
+				%button.navbar-toggle{type: 'button', data: {toggle: "collapse", target: '.navbar-collapse'}}
 					%span.icon-bar
 					%span.icon-bar
 					%span.icon-bar
@@ -12,16 +12,16 @@
 					%li
 						%a{:href => "/"} Home
 					%li
-						%a{:href => "#about"} Instructions
+						%a{:href => "#instructions", data: {toggle: "modal", target: "#myModal"}} Instructions
 					%li
 						%a{:href => "http://www.rudycrespo.com", :target => "_blank"} Contact
 
-	.container-fluid
+	.container
 		%button.new-element New Element
-		.row-fluid
+		.row
 			.atoms
 			.info.pull-left
-		.row-fluid
+		.row
 			.periodic-table.col-lg-12
 				%table.main-elements
 					%tbody
@@ -102,4 +102,4 @@
 							%td{class: "chemical", data: {attribute: element.atomic_number, name: element.name, symbol: element.symbol, weight: element.atomic_weight}}= element.symbol
 
 
-		
+= render "instructions"		
