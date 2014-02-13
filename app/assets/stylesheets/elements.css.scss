@@ -1,17 +1,11 @@
-$media: screen;
-$feature-max: max-width;
-$feature-min: min-width;
-$tablet-min: 768px;
-$tablet-max: 1024px;
-$phone-min: 320px;
-$phone-max: 480px;
 $homecolor: #2d2c2c;
-$transparentcolor: rgba(0,0,0,0.9);
 $headerfont: 'Roboto Condensed', sans-serif;
 $headerweight: 800;
 $bodyfont: 'Open Sans', sans-serif;
 $bodycolor: #fff;
 $bodyweight: 400;
+
+@import 'animate';
 
 html, body {
 	min-height: 100%;
@@ -53,11 +47,10 @@ html, body {
 				text-decoration: none;
 				border: 2px $homecolor solid;
 				color: $homecolor;
-				padding: 13px 25px 13px 25px;
+				padding: 13px 25px;
 				-webkit-border-radius: 10px;
 				-moz-border-radius: 10px;
 				border-radius: 10px;
-				letter-spacing: .1em;
 				text-transform: uppercase;
 				font-family: $bodyfont;
 				font-weight: $bodyweight;
@@ -108,6 +101,7 @@ html, body {
 	.new-element {
 		display: none;
 	}
+
 	.atoms {
 		canvas {
 			padding-left: 0;
