@@ -1,10 +1,27 @@
 %body#playground
+	.navbar.navbar-inverse.navbar-static-top{role: "navigation"}
+		.container-fluid
+			.navbar-header
+				%button.navbar-toggle{type: 'button', data: {target: '.navbar-collapse', toggle: "collapse"}}
+					%span.icon-bar
+					%span.icon-bar
+					%span.icon-bar
+				%a.navbar-brand{:href => "/"} Proton Playground
+			.collapse.navbar-collapse
+				%ul.nav.navbar-nav.navbar-right
+					%li
+						%a{:href => "/"} Home
+					%li
+						%a{:href => "#about"} Instructions
+					%li
+						%a{:href => "http://www.rudycrespo.com", :target => "_blank"} Contact
+
 	.container-fluid
-		%button New Element
-		.row
+		%button.new-element New Element
+		.row-fluid
 			.atoms
 			.info.pull-left
-		.row
+		.row-fluid
 			.periodic-table.col-lg-12
 				%table.main-elements
 					%tbody

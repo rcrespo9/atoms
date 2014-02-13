@@ -1,10 +1,12 @@
-$('button').click(function() {
+// new element button
+$('button.new-element').click(function() {
 	$('.periodic-table').fadeIn('fast');
 	d3.select('canvas').remove();
-	$('button').fadeOut('fast');
+	$('button.new-element').fadeOut('fast');
 	$('.details').remove();
 })
 
+// periodic table and visualization
 $('td.chemical').click(function() {
 	var width = 960,
 	    height = 500,
@@ -14,7 +16,7 @@ $('td.chemical').click(function() {
 	    atomic_weight = $(this).data('weight');
 
 	$('.periodic-table').fadeOut('fast');
-	$('button').fadeIn('fast');
+	$('button.new-element').fadeIn('fast');
 	$('.info').append(
 		'<p class="details">' + atomic_number + '</p>', 
 		'<p class="details">' + symbol + '</p>',

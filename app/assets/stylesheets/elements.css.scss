@@ -7,11 +7,15 @@ $phone-min: 320px;
 $phone-max: 480px;
 $homecolor: #262524;
 $transparentcolor: rgba(0,0,0,0.9);
+$headerfont: 'Roboto Condensed', sans-serif;
+$headerweight: 800;
 $bodyfont: 'Open Sans', sans-serif;
+$bodyweight: 400;
 
 html, body {
 	min-height: 100%;
 	min-width: 100%;
+	overflow-x: hidden;
 }
 
 /******landing page******/
@@ -30,9 +34,9 @@ html, body {
 		margin-top: 10%;
 
 		h1 {
-			font-family: 'Roboto Condensed', sans-serif;
+			font-family: $headerfont;
 			font-size: 4.7em;
-			font-weight: 800;
+			font-weight: $headerweight;
 			text-transform: uppercase;
 		}
 		
@@ -54,7 +58,7 @@ html, body {
 				border-radius: 10px;
 				text-transform: uppercase;
 				font-family: $bodyfont;
-				font-weight: 400;
+				font-weight: $bodyweight;
 				font-size: .8em;
 				-webkit-transition: all .2s ease-in-out;
 				-moz-transition: all .2s ease-in-out;
@@ -74,6 +78,17 @@ html, body {
 
 /******playground******/
 #playground {
+	.navbar-brand {
+		font-family: $headerfont;
+		font-weight: $headerweight;
+		text-transform: uppercase;
+	}
+
+	.navbar-nav {
+		font-family: $bodyfont;
+		font-weight: $bodyweight;
+	}
+
 	button {
 		display: none;
 	}
