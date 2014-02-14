@@ -17,11 +17,11 @@
 						%a{:href => "http://www.rudycrespo.com", :target => "_blank"} Contact
 
 	.container
-		%button.new-element New Element
-		.row
-			.atoms
-			.info.pull-left
-		.row
+		.row.visualization
+			.col-lg-12
+				.atoms
+				.element-info.pull-left
+		.row.tables
 			.periodic-table.col-lg-12
 				%table.main-elements
 					%tbody
@@ -75,7 +75,7 @@
 
 							%td{class: "chemical", data: {attribute: @elements[55].atomic_number, name: @elements[55].name, symbol: @elements[55].symbol, weight: @elements[55].atomic_weight}}= @elements[55].symbol
 
-							%td Lant
+							%td.series Lant
 
 							- (@elements[71..85]).each do |element|
 								%td{class: "chemical", data: {attribute: element.atomic_number, name: element.name, symbol: element.symbol, weight: element.atomic_weight}}= element.symbol
@@ -86,7 +86,7 @@
 
 							%td{class: "chemical", data: {attribute: @elements[87].atomic_number, name: @elements[87].name, symbol: @elements[87].symbol, weight: @elements[87].atomic_weight}}= @elements[87].symbol
 
-							%td Acti
+							%td.series Acti
 							
 							- (@elements[103..117]).each do |element|
 								%td{class: "chemical", data: {attribute: element.atomic_number, name: element.name, symbol: element.symbol, weight: element.atomic_weight}}= element.symbol				

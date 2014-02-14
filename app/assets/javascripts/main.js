@@ -1,8 +1,7 @@
 // new element button
-$('button.new-element').click(function() {
+$('.element-info').on('click', '#new-element', function() {
 	$('.periodic-table').fadeIn('fast');
 	d3.select('canvas').remove();
-	$('button.new-element').fadeOut('fast');
 	$('.details').remove();
 })
 
@@ -16,13 +15,14 @@ $('td.chemical').click(function() {
 	    atomic_weight = $(this).data('weight');
 
 	$('.periodic-table').fadeOut('fast');
-	$('button.new-element').fadeIn('fast');
-	$('.info').append(
+	$('.element-info').append(
 		'<p class="details">' + atomic_number + '</p>', 
 		'<p class="details">' + symbol + '</p>',
 		'<p class="details">' + name + '</p>',
-		'<p class="details">' + atomic_weight + '</p>'
+		'<p class="details">' + atomic_weight + '</p>',
+		'<button class="details" id="new-element">New Element</button>'
 	);
+
 	d3.select('canvas').remove();
 
 	var nodes = d3.range(atomic_number + 1).map(function() { return {radius: Math.random() * 12 + 4}; }),

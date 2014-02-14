@@ -1,4 +1,5 @@
-$homecolor: #2d2c2c;
+$homecolor: #262524;
+$playgroundcolor: #2d2c2c;
 $headerfont: 'Roboto Condensed', sans-serif;
 $headerweight: 800;
 $bodyfont: 'Open Sans', sans-serif;
@@ -10,7 +11,7 @@ $bodyweight: 400;
 html, body {
 	min-height: 100%;
 	min-width: 100%;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 /******landing page******/
@@ -74,7 +75,7 @@ html, body {
 /******playground******/
 #playground {
 	.navbar-default {
-		background-color: $homecolor;
+		background-color: $playgroundcolor;
 		min-height: 72px;
 
 		a {
@@ -98,27 +99,26 @@ html, body {
 		}
 	}
 
-	.new-element {
-		display: none;
-	}
-
-	.atoms {
-		canvas {
-			padding-left: 0;
-			padding-right: 0;
-			margin-left: auto;
-			margin-right: auto;
-			display: block;
-			max-width: 800px;
+	.visualization {
+		.atoms {
+			canvas {
+				padding-left: 0;
+				padding-right: 0;
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
+				max-width: 800px;
+			}
 		}
 	}
 
 	.periodic-table {
 		font-family: $bodyfont;
 		font-size: 1.1em;
-		font-weight: 600;
+		font-weight: $bodyweight;
 		position: absolute;
-		bottom: 0;
+		left: 0;
+		right: 0;
 
 		table {
 			margin-left: auto;
@@ -135,9 +135,9 @@ html, body {
 			width: 52px;
 			height: 52px;
 			&:not(.empty-cell) {
-				background-color: $homecolor;
+				background-color: $playgroundcolor;
 				color: $bodycolor;
-				border: 1px solid $homecolor;
+				border: 1px solid $playgroundcolor;
 				border-radius: 5px;
 				font-size: 1em;
 				cursor: pointer;
