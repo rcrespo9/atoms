@@ -1,9 +1,9 @@
 // new element button click event
-$('.element-info').on('click', '#new-element', function() {
+$('.big-element').on('click', '#new-element', function() {
 	$('.tables').show();
 	d3.select('canvas').remove();
 	$('.details').remove();
-})
+});
 
 // periodic table and visualization click event
 $('td.chemical').click(function() {
@@ -17,13 +17,16 @@ $('td.chemical').click(function() {
 	$('.tables').hide();
 	$('.visualization').show();
 
-	$('.element-info').append(
-		'<p class="details">' + atomic_number + '</p>', 
-		'<p class="details">' + symbol + '</p>',
-		'<p class="details">' + name + '</p>',
-		'<p class="details">' + atomic_weight + '</p>',
+	$('.big-element').append(
+		$('.element-info').append(
+			'<p class="details">' + atomic_number + '</p>', 
+			'<p class="details">' + symbol + '</p>',
+			'<p class="details">' + name + '</p>',
+			'<p class="details">' + atomic_weight + '</p>'
+		),
 		'<button class="details" id="new-element">New Element</button>'
 	);
+
 
 	d3.select('canvas').remove();
 
@@ -56,7 +59,7 @@ $('td.chemical').click(function() {
 	  for (i = 1; i < n; ++i) q.visit(collide(nodes[i]));
 
 	  context.clearRect(0, 0, width, height);
-	  context.fillStyle = "grey";
+	  context.fillStyle = "#2d2c2c";
 	  context.beginPath();
 	  for (i = 1; i < n; ++i) {
 	    d = nodes[i];
@@ -95,5 +98,22 @@ $('td.chemical').click(function() {
 	    }
 	    return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
 	  };
+	}
+});
+
+// chemical element hover events
+$('td.chemical').hover(function() {
+	$(this).toggleClass('animated pulse');
+});
+
+$('td').hover(function() {
+	var animation = 'animated shake';
+	
+	if($(this).attr('id') === 'acti') {
+		$('.acti-series').toggleClass(animation);
+	} 
+	
+	else if ($(this).attr('id') === 'lant') {
+		$('.lant-series').toggleClass(animation);
 	}
 });

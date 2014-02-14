@@ -18,9 +18,10 @@
 
 	.container
 		.row.visualization
-			.col-lg-12
+			.col-lg-2.big-element.text-left
+				.element-info
+			.col-lg-10
 				.atoms
-				.element-info.pull-left
 		.row.tables
 			.periodic-table.col-lg-12
 				%table.main-elements
@@ -75,7 +76,7 @@
 
 							%td{class: "chemical", data: {attribute: @elements[55].atomic_number, name: @elements[55].name, symbol: @elements[55].symbol, weight: @elements[55].atomic_weight}}= @elements[55].symbol
 
-							%td.series Lant
+							%td#lant Lant
 
 							- (@elements[71..85]).each do |element|
 								%td{class: "chemical", data: {attribute: element.atomic_number, name: element.name, symbol: element.symbol, weight: element.atomic_weight}}= element.symbol
@@ -86,7 +87,7 @@
 
 							%td{class: "chemical", data: {attribute: @elements[87].atomic_number, name: @elements[87].name, symbol: @elements[87].symbol, weight: @elements[87].atomic_weight}}= @elements[87].symbol
 
-							%td.series Acti
+							%td#acti Acti
 							
 							- (@elements[103..117]).each do |element|
 								%td{class: "chemical", data: {attribute: element.atomic_number, name: element.name, symbol: element.symbol, weight: element.atomic_weight}}= element.symbol				
@@ -95,11 +96,11 @@
 					%tbody
 						%tr
 						- (@elements[56..70]).each do |element|
-							%td{class: "chemical", data: {attribute: element.atomic_number, name: element.name, symbol: element.symbol, weight: element.atomic_weight}}= element.symbol
+							%td{class: "chemical lant-series", data: {attribute: element.atomic_number, name: element.name, symbol: element.symbol, weight: element.atomic_weight}}= element.symbol
 							
 						%tr
 						- (@elements[88..102]).each do |element|
-							%td{class: "chemical", data: {attribute: element.atomic_number, name: element.name, symbol: element.symbol, weight: element.atomic_weight}}= element.symbol
+							%td{class: "chemical acti-series", data: {attribute: element.atomic_number, name: element.name, symbol: element.symbol, weight: element.atomic_weight}}= element.symbol
 
 
 = render "instructions"		

@@ -6,8 +6,6 @@ $bodyfont: 'Open Sans', sans-serif;
 $bodycolor: #fff;
 $bodyweight: 400;
 
-@import 'animate';
-
 html, body {
 	min-height: 100%;
 	min-width: 100%;
@@ -117,9 +115,6 @@ html, body {
 		font-family: $bodyfont;
 		font-size: 1.1em;
 		font-weight: $bodyweight;
-		position: absolute;
-		left: 0;
-		right: 0;
 
 		table {
 			margin-left: auto;
@@ -139,7 +134,7 @@ html, body {
 				background-color: $playgroundcolor;
 				color: $bodycolor;
 				border: 1px solid $playgroundcolor;
-				border-radius: 5px;
+				border-radius: 6px;
 				font-size: 1em;
 				cursor: pointer;
 				text-align: center;
