@@ -5,6 +5,7 @@ $headerweight: 800;
 $bodyfont: 'Open Sans', sans-serif;
 $bodycolor: #fff;
 $bodyweight: 400;
+$bodyweightbold: 600;
 
 html, body {
 	min-height: 100%;
@@ -74,11 +75,9 @@ html, body {
 #playground {
 	.navbar-default {
 		background-color: $playgroundcolor;
-		min-height: 72px;
 
 		a {
 			color: $bodycolor;
-			line-height: 50px;
 		}
 
 		.navbar-brand {
@@ -101,6 +100,8 @@ html, body {
 		display: none;
 		.atoms {
 			canvas {
+				border: 3px solid $playgroundcolor;
+				border-radius: 6px;
 				padding-left: 0;
 				padding-right: 0;
 				margin-left: auto;
@@ -109,12 +110,42 @@ html, body {
 				max-width: 800px;
 			}
 		}
+
+		.big-element {
+			.element-info {
+				border: 1px solid $playgroundcolor;
+				border-radius: 6px;
+				font-family: $bodyfont;
+				font-weight: $bodyweight;
+				font-size: .9em;
+				background-color: $playgroundcolor;
+				color: $bodycolor;
+				margin: 0 auto;
+				width: 120px;
+				height: 160px;
+				padding: .6em;
+
+				#symbol {
+					font-size: 3.6em;
+					font-weight: $bodyweightbold;
+				}
+
+				#atomic_weight {
+					line-height: .2;
+				}
+			}
+
+			button {
+				margin-top: 7%;
+			}
+		}
 	}
 
 	.periodic-table {
 		font-family: $bodyfont;
 		font-size: 1.1em;
 		font-weight: $bodyweight;
+		color: $bodycolor;
 
 		table {
 			margin-left: auto;
@@ -128,16 +159,13 @@ html, body {
 		}
 
 		td {
-			width: 52px;
-			height: 52px;
+			width: 54px;
+			height: 54px;
 			&:not(.empty-cell) {
 				background-color: $playgroundcolor;
-				color: $bodycolor;
 				border: 1px solid $playgroundcolor;
 				border-radius: 6px;
-				font-size: 1em;
 				cursor: pointer;
-				text-align: center;
 			}
 		}
 	}	

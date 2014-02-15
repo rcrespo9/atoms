@@ -1,10 +1,3 @@
-// new element button click event
-$('.big-element').on('click', '#new-element', function() {
-	$('.tables').show();
-	d3.select('canvas').remove();
-	$('.details').remove();
-});
-
 // periodic table and visualization click event
 $('td.chemical').click(function() {
 	var width = 960,
@@ -18,13 +11,13 @@ $('td.chemical').click(function() {
 	$('.visualization').show();
 
 	$('.big-element').append(
-		$('.element-info').append(
-			'<p class="details">' + atomic_number + '</p>', 
-			'<p class="details">' + symbol + '</p>',
-			'<p class="details">' + name + '</p>',
-			'<p class="details">' + atomic_weight + '</p>'
+		$('.element-info').prepend(
+			'<p class="details text-right" id="atomic_number">' + atomic_number + '</p>', 
+			'<p class="details" id="symbol">' + symbol + '</p>',
+			'<p class="details" id="name">' + name + '</p>',
+			'<p class="details" id="atomic_weight">' + atomic_weight + '</p>'
 		),
-		'<button class="details" id="new-element">New Element</button>'
+		'<button class="details text-center" id="new-element">New Element</button>'
 	);
 
 
@@ -101,6 +94,15 @@ $('td.chemical').click(function() {
 	}
 });
 
+// new element button click event
+$('.big-element').on('click', '#new-element', function() {
+	$('.tables').show();
+	$('.visualization').hide();
+	d3.select('canvas').remove();
+	$('.details').remove();
+});
+
+
 // chemical element hover events
 $('td.chemical').hover(function() {
 	$(this).toggleClass('animated pulse');
@@ -108,12 +110,13 @@ $('td.chemical').hover(function() {
 
 $('td').hover(function() {
 	var animation = 'animated shake';
+	var $this = $(this);
 	
-	if($(this).attr('id') === 'acti') {
+	if($this.attr('id') === 'acti') {
 		$('.acti-series').toggleClass(animation);
 	} 
 	
-	else if ($(this).attr('id') === 'lant') {
+	else if ($this.attr('id') === 'lant') {
 		$('.lant-series').toggleClass(animation);
 	}
 });
