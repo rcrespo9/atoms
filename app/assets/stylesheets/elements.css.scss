@@ -6,6 +6,7 @@ $bodyfont: 'Open Sans', sans-serif;
 $bodycolor: #fff;
 $bodyweight: 400;
 $bodyweightbold: 600;
+$buttonfontsize: .8em;
 
 html, body {
 	min-height: 100%;
@@ -48,13 +49,13 @@ html, body {
 				border: 2px $homecolor solid;
 				color: $homecolor;
 				padding: 13px 25px;
-				-webkit-border-radius: 10px;
-				-moz-border-radius: 10px;
-				border-radius: 10px;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
 				text-transform: uppercase;
 				font-family: $bodyfont;
 				font-weight: $bodyweight;
-				font-size: .8em;
+				font-size: $buttonfontsize;
 				-webkit-transition: all .2s ease-in-out;
 				-moz-transition: all .2s ease-in-out;
 				transition: all .2s ease-in-out;
@@ -78,6 +79,9 @@ html, body {
 
 		a {
 			color: $bodycolor;
+			line-height: 72px;
+		    height: 72px;
+		    padding-top: 0;
 		}
 
 		.navbar-brand {
@@ -90,28 +94,33 @@ html, body {
 		.navbar-nav {
 			font-family: $bodyfont;
 			font-weight: $bodyweight;
-			font-size: .9em;
+			font-size: .8em;
 			text-transform: uppercase;
 			letter-spacing: .1em;
 		}
 	}
 
 	.visualization {
+
 		display: none;
+  		margin-top: 5.5%;
+
 		.atoms {
+			margin-bottom: 3%;
 			canvas {
-				border: 3px solid $playgroundcolor;
-				border-radius: 6px;
-				padding-left: 0;
-				padding-right: 0;
-				margin-left: auto;
-				margin-right: auto;
-				display: block;
-				max-width: 800px;
+				border: 7px solid $playgroundcolor;
+				border-radius: 7px;
 			}
 		}
 
+		button {
+			padding: 13px 25px;
+			font-size: $buttonfontsize;
+			text-transform: uppercase;
+		}
+
 		.big-element {
+			margin-top: 8%;
 			.element-info {
 				border: 1px solid $playgroundcolor;
 				border-radius: 6px;
@@ -120,7 +129,6 @@ html, body {
 				font-size: .9em;
 				background-color: $playgroundcolor;
 				color: $bodycolor;
-				margin: 0 auto;
 				width: 120px;
 				height: 160px;
 				padding: .6em;
@@ -134,10 +142,6 @@ html, body {
 					line-height: .2;
 				}
 			}
-		}
-
-		button {
-			margin-top: 3%;
 		}
 	}
 

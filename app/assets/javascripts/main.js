@@ -7,8 +7,8 @@ var playground = (function() {
 		$newElement = $('#new-element');
 
 	var visualization = $element.click(function() {
-		var width = 960,
-		    height = 500,
+		var width = 650,
+		    height = 339,
 		    atomic_number = $(this).data('attribute'),
 		    symbol = $(this).data('symbol'),
 		    name = $(this).data('name'),
