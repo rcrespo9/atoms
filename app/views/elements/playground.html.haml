@@ -16,13 +16,17 @@
 					%li
 						%a{:href => "http://www.rudycrespo.com", :target => "_blank"} Contact
 
-	.container
-		.row.visualization
-			.col-lg-2.big-element.text-center
-				.element-info
+	.container.visualization.text-center
+		.row
 			.col-lg-10
-				.atoms
-		.row.tables
+				.atoms		
+			.col-lg-2.big-element
+				.element-info
+		.row
+			%button#new-element.btn.btn-danger New Element
+
+	.container.tables
+		.row
 			.periodic-table.col-lg-12.text-center
 				%table.main-elements
 					%tbody

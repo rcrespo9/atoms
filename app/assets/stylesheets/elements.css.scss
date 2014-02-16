@@ -10,7 +10,7 @@ $bodyweightbold: 600;
 html, body {
 	min-height: 100%;
 	min-width: 100%;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 /******landing page******/
@@ -134,10 +134,10 @@ html, body {
 					line-height: .2;
 				}
 			}
+		}
 
-			button {
-				margin-top: 7%;
-			}
+		button {
+			margin-top: 3%;
 		}
 	}
 

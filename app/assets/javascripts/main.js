@@ -3,7 +3,8 @@ var playground = (function() {
 	var $element = $('td.chemical'),
 	 	$tables = $('.tables'),
 		$viz = $('.visualization'),
-		$bigElement = $('.big-element');
+		$elementInfo = $('.element-info');
+		$newElement = $('#new-element');
 
 	var visualization = $element.click(function() {
 		var width = 960,
@@ -16,18 +17,13 @@ var playground = (function() {
 		$tables.hide();
 		$viz.show();
 
-		$bigElement.append(
-			$('.element-info').prepend(
-				'<p class="details text-left" id="atomic_number">' + atomic_number + '</p>', 
-				'<p class="details" id="symbol">' + symbol + '</p>',
-				'<p class="details" id="name">' + name + '</p>',
-				'<p class="details" id="atomic_weight">' + atomic_weight + '</p>'
-			),
-			'<button class="text-center btn btn-danger details" id="new-element">New Element</button>'
+		$elementInfo.append(
+			'<p class="details text-left" id="atomic_number">' + atomic_number + '</p>', 
+			'<p class="details" id="symbol">' + symbol + '</p>',
+			'<p class="details" id="name">' + name + '</p>',
+			'<p class="details" id="atomic_weight">' + atomic_weight + '</p>'
 		);
 
-
-		d3.select('canvas').remove();
 
 		var nodes = d3.range(atomic_number + 1).map(function() { return {radius: Math.random() * 12 + 4}; }),
 		    root = nodes[0];
@@ -100,7 +96,7 @@ var playground = (function() {
 		}
 	});
 	
-	var elementButton = $bigElement.on('click', '#new-element', function() {
+	var elementButton = $newElement.click(function() {
 		$viz.hide();
 		d3.select('canvas').remove();
 		$('.details').remove();		
