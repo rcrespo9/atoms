@@ -7,6 +7,7 @@ $bodycolor: #fff;
 $bodyweight: 400;
 $bodyweightbold: 600;
 $buttonfontsize: .8em;
+$mobile: 480px;
 
 html, body {
 	min-height: 100%;
@@ -84,11 +85,22 @@ html, body {
 		    padding-top: 0;
 		}
 
+		.navbar-toggle {
+			margin-top: 18px;
+		}
+
 		.navbar-brand {
 			font-family: $headerfont;
 			font-size: 1.6em;
 			font-weight: $headerweight;
 			text-transform: uppercase;
+		}
+
+		@media(max-width: $mobile) {
+			ul.nav {
+			  float: none !important;
+			  text-align: center;
+			}
 		}
 
 		.navbar-nav {
@@ -98,12 +110,15 @@ html, body {
 			text-transform: uppercase;
 			letter-spacing: .1em;
 
-			a:hover {
-		    	color: #888;
-		    	-webkit-transition: all .3s ease-in-out;
-				-moz-transition: all .3s ease-in-out;
-				transition: all .3s ease-in-out;
-		    }
+			li {
+				display: inline-block;
+				a:hover {
+			    	color: #888;
+			    	-webkit-transition: all .3s ease-in-out;
+					-moz-transition: all .3s ease-in-out;
+					transition: all .3s ease-in-out;
+			    }
+			}
 		}
 	}
 
