@@ -5,6 +5,7 @@ $noble-gases: 2,10,18,36,54,86,118;
 $halogens: 9,17,35,53,85,117;
 $semi-metals: 5,14,32,33,51,52,84;
 $basic-metals: 13,31,49,50,81,82,83,113,114,115,116;
+$transition-metals: 21-30;
 
 @mixin non-metals {
 	@each $i in $non-metals {
@@ -58,6 +59,51 @@ $basic-metals: 13,31,49,50,81,82,83,113,114,115,116;
 	@each $i in $basic-metals {
 		&[data-attribute='#{$i}'] {
 			background-color: purple;
+		}
+	}
+}
+
+@mixin lant-series {
+	td.lant-series, #lant {
+		background-color: orchid;
+	}
+}
+
+@mixin acti-series {
+	td.acti-series, #acti {
+		background-color: teal;
+	}
+}
+
+@mixin transitioncolor {
+	background-color: blue;
+}
+
+@mixin transition-metals {
+	@for $i from 21 through 112 {
+
+		@if $i <= 30 {
+			&[data-attribute='#{$i}'] {
+				@include transitioncolor;
+			}
+		}
+
+		@if $i > 38 and $i < 49 {
+			&[data-attribute='#{$i}'] {
+				@include transitioncolor;
+			}
+		}
+
+		@if $i > 71 and $i < 81 {
+			&[data-attribute='#{$i}'] {
+				@include transitioncolor;
+			}
+		}
+
+		@if $i > 103 and $i < 113 {
+			&[data-attribute='#{$i}'] {
+				@include transitioncolor;
+			}
 		}
 	}
 }

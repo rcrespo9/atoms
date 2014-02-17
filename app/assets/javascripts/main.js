@@ -6,6 +6,7 @@ var playground = (function() {
 		$elementInfo = $('.element-info'),
 		$newElement = $('#new-element');
 
+	// initialize visualization	
 	var visualization = $element.click(function() {
 		var width = 650,
 		    height = 339,
@@ -94,6 +95,7 @@ var playground = (function() {
 		}
 	});
 	
+	// new element button hides viz and displays tables
 	var elementButton = $newElement.click(function() {
 		$viz.hide();
 		d3.select('svg').remove();
@@ -101,6 +103,7 @@ var playground = (function() {
 		$tables.show();
 	});
 
+	// element hover events
 	var elementHover = $element.hover(function() {
 		$(this).toggleClass('animated pulse');
 	});

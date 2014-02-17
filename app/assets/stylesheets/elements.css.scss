@@ -203,7 +203,11 @@ html, body {
 			@include halogens;
 			@include semi-metals;
 			@include basic-metals;
+			@include transition-metals;
 		}
+
+		@include lant-series;
+		@include acti-series;
 	}	
 }
 
