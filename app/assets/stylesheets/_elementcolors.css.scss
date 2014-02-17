@@ -1,16 +1,38 @@
+$elementborder: 1px solid;
+
 $non-metals: 1,6,7,8,15,16,34;
+$nonmetalscolor: rgb(129,173,181);
+
 $alkali-metals: 3,11,19,37,55,87;
+$alkalicolors: rgb(178,200,145);
+
 $alkaline-metals: 4,12,20,38,56,88;
+$alkalinecolors: rgb(185,156,107);
+
 $noble-gases: 2,10,18,36,54,86,118;
+$noblegasescolor: rgb(173,133,186);
+
 $halogens: 9,17,35,53,85,117;
+$halogenscolor: rgb(149,161,195);
+
 $semi-metals: 5,14,32,33,51,52,84;
+$semimetalscolor: rgb(116,161,142);
+
 $basic-metals: 13,31,49,50,81,82,83,113,114,115,116;
-$transition-metals: 21-30;
+$basicmetalscolor: rgb(201,194,127);
+
+$lantcolor: rgb(178,170,164);
+$acticolor: rgb(145,134,126);
+
+$transitioncolor: rgb(228,153,105);
+
+
 
 @mixin non-metals {
 	@each $i in $non-metals {
 		&[data-attribute='#{$i}'] {
-			background-color: brown;
+			background-color: $nonmetalscolor;
+			border: $elementborder $nonmetalscolor;
 		}
 	}
 }
@@ -18,7 +40,8 @@ $transition-metals: 21-30;
 @mixin alkali-metals {
 	@each $i in $alkali-metals {
 		&[data-attribute='#{$i}'] {
-			background-color: navy;
+			background-color: $alkalicolors;
+			border: $elementborder $alkalicolors; 
 		}
 	}
 }
@@ -26,7 +49,8 @@ $transition-metals: 21-30;
 @mixin alkaline-metals {
 	@each $i in $alkaline-metals {
 		&[data-attribute='#{$i}'] {
-			background-color: red;
+			background-color: $alkalinecolors;
+			border: $elementborder $alkalinecolors;
 		}
 	}
 }
@@ -34,7 +58,8 @@ $transition-metals: 21-30;
 @mixin noble-gases {
 	@each $i in $noble-gases {
 		&[data-attribute='#{$i}'] {
-			background-color: orange;
+			background-color: $noblegasescolor;
+			border: $elementborder $noblegasescolor;
 		}
 	}
 }
@@ -42,7 +67,8 @@ $transition-metals: 21-30;
 @mixin halogens {
 	@each $i in $halogens  {
 		&[data-attribute='#{$i}'] {
-			background-color: green;
+			background-color: $halogenscolor;
+			border: $elementborder $halogenscolor;
 		}
 	}
 }
@@ -50,7 +76,8 @@ $transition-metals: 21-30;
 @mixin semi-metals {
 	@each $i in $semi-metals {
 		&[data-attribute='#{$i}'] {
-			background-color: steelblue;
+			background-color: $semimetalscolor;
+			border: $elementborder $semimetalscolor;
 		}
 	}
 }
@@ -58,25 +85,29 @@ $transition-metals: 21-30;
 @mixin basic-metals {
 	@each $i in $basic-metals {
 		&[data-attribute='#{$i}'] {
-			background-color: purple;
+			background-color: $basicmetalscolor;
+			border: $elementborder $basicmetalscolor;
 		}
 	}
 }
 
 @mixin lant-series {
 	td.lant-series, #lant {
-		background-color: orchid;
+		background-color: $lantcolor;
+		border: $elementborder $lantcolor;
 	}
 }
 
 @mixin acti-series {
 	td.acti-series, #acti {
-		background-color: teal;
+		background-color: $acticolor;
+		border: $elementborder $acticolor;
 	}
 }
 
 @mixin transitioncolor {
-	background-color: blue;
+	background-color: $transitioncolor;
+	border: $elementborder $transitioncolor;
 }
 
 @mixin transition-metals {

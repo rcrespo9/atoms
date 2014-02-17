@@ -6,14 +6,16 @@ var playground = (function() {
 		$elementInfo = $('.element-info'),
 		$newElement = $('#new-element');
 
-	// initialize visualization	
+	// initialize visualization	onclick
 	var visualization = $element.click(function() {
 		var width = 650,
 		    height = 339,
 		    atomic_number = $(this).data('attribute'),
 		    symbol = $(this).data('symbol'),
 		    name = $(this).data('name'),
-		    atomic_weight = $(this).data('weight');
+		    atomic_weight = $(this).data('weight'),
+		    elementColor = $(this).css('background-color'),
+		    elementBorder = $(this).css('border');
 
 		$tables.hide();
 		$viz.show();
@@ -25,10 +27,13 @@ var playground = (function() {
 			'<p class="details" id="atomic_weight">' + atomic_weight + '</p>'
 		);
 
+		$elementInfo.css('background-color', elementColor);
+		$elementInfo.css('border', elementBorder);
+
 
 		var nodes = d3.range(atomic_number + 1).map(function() { return {radius: Math.random() * 12 + 4}; }),
 		    root = nodes[0],
-		    color = d3.scale.ordinal().range(colorbrewer.RdBu[11]);
+		    color = d3.scale.ordinal().range(colorbrewer.RdGy[11]);
 
 		root.radius = 0;
 		root.fixed = true;
