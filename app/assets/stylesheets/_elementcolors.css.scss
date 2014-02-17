@@ -1,0 +1,63 @@
+$non-metals: 1,6,7,8,15,16,34;
+$alkali-metals: 3,11,19,37,55,87;
+$alkaline-metals: 4,12,20,38,56,88;
+$noble-gases: 2,10,18,36,54,86,118;
+$halogens: 9,17,35,53,85,117;
+$semi-metals: 5,14,32,33,51,52,84;
+$basic-metals: 13,31,49,50,81,82,83,113,114,115,116;
+
+@mixin non-metals {
+	@each $i in $non-metals {
+		&[data-attribute='#{$i}'] {
+			background-color: brown;
+		}
+	}
+}
+
+@mixin alkali-metals {
+	@each $i in $alkali-metals {
+		&[data-attribute='#{$i}'] {
+			background-color: navy;
+		}
+	}
+}
+
+@mixin alkaline-metals {
+	@each $i in $alkaline-metals {
+		&[data-attribute='#{$i}'] {
+			background-color: red;
+		}
+	}
+}
+
+@mixin noble-gases {
+	@each $i in $noble-gases {
+		&[data-attribute='#{$i}'] {
+			background-color: orange;
+		}
+	}
+}
+
+@mixin halogens {
+	@each $i in $halogens  {
+		&[data-attribute='#{$i}'] {
+			background-color: green;
+		}
+	}
+}
+
+@mixin semi-metals {
+	@each $i in $semi-metals {
+		&[data-attribute='#{$i}'] {
+			background-color: steelblue;
+		}
+	}
+}
+
+@mixin basic-metals {
+	@each $i in $basic-metals {
+		&[data-attribute='#{$i}'] {
+			background-color: purple;
+		}
+	}
+}

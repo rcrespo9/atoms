@@ -3,7 +3,7 @@ var playground = (function() {
 	var $element = $('td.chemical'),
 	 	$tables = $('.tables'),
 		$viz = $('.visualization'),
-		$elementInfo = $('.element-info');
+		$elementInfo = $('.element-info'),
 		$newElement = $('#new-element');
 
 	var visualization = $element.click(function() {

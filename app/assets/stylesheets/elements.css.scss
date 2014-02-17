@@ -7,7 +7,10 @@ $bodycolor: #fff;
 $bodyweight: 400;
 $bodyweightbold: 600;
 $buttonfontsize: .8em;
+$buttonpadding: 13px 25px;
 $mobile: 480px;
+
+@import 'elementcolors';
 
 html, body {
 	min-height: 100%;
@@ -49,7 +52,7 @@ html, body {
 				text-decoration: none;
 				border: 2px $homecolor solid;
 				color: $homecolor;
-				padding: 13px 25px;
+				padding: $buttonpadding;
 				-webkit-border-radius: 4px;
 				-moz-border-radius: 4px;
 				border-radius: 4px;
@@ -136,7 +139,7 @@ html, body {
 		}
 
 		button {
-			padding: 13px 25px;
+			padding: $buttonpadding;
 			font-size: $buttonfontsize;
 			text-transform: uppercase;
 		}
@@ -193,6 +196,13 @@ html, body {
 				border-radius: 6px;
 				cursor: pointer;
 			}
+			@include non-metals;
+			@include alkali-metals;
+			@include alkaline-metals;
+			@include noble-gases;
+			@include halogens;
+			@include semi-metals;
+			@include basic-metals;
 		}
 	}	
 }
