@@ -1,5 +1,5 @@
 $homecolor: #262524;
-$playgroundcolor: #2d2c2c;
+$playgroundcolor: #222222;
 $headerfont: 'Roboto Condensed', sans-serif;
 $headerweight: 800;
 $bodyfont: 'Open Sans', sans-serif;
@@ -157,6 +157,7 @@ html, body {
 				width: 120px;
 				height: 160px;
 				padding: .6em;
+				cursor: pointer;
 
 				#symbol {
 					font-size: 3.6em;
@@ -191,6 +192,8 @@ html, body {
 			width: 54px;
 			height: 54px;
 			&:not(.empty-cell) {
+				background-color: $playgroundcolor;
+				border: 1px solid $playgroundcolor;
 				border-radius: 6px;
 				cursor: pointer;
 			}

@@ -1,37 +1,37 @@
 var playground = (function() {
 	
-	var $element = $('td.chemical'),
-	 	$tables = $('.tables'),
-		$viz = $('.visualization'),
-		$elementInfo = $('.element-info'),
-		$newElement = $('#new-element');
+	var $element = $('td.chemical');
+	var $tables = $('.tables');
+	var	$viz = $('.visualization');
+	var	$elementInfo = $('.element-info');
+	var	$newElement = $('#new-element');
 
 	// initialize visualization	onclick
 	var visualization = $element.click(function() {
-		var width = 650,
-		    height = 339,
-		    atomic_number = $(this).data('attribute'),
-		    symbol = $(this).data('symbol'),
-		    name = $(this).data('name'),
-		    atomic_weight = $(this).data('weight'),
-		    elementColor = $(this).css('background-color'),
-		    elementBorder = $(this).css('border');
+		var width = 650;
+		var height = 339;
+		var $atomic_number = $(this).data('attribute');
+		var $symbol = $(this).data('symbol');
+		var $name = $(this).data('name');
+		var $atomic_weight = $(this).data('weight');
+		var $elementColor = $(this).css('background-color');
+		var $elementBorder = $(this).css('border');
 
 		$tables.hide();
 		$viz.show();
 
 		$elementInfo.append(
-			'<p class="details text-left" id="atomic_number">' + atomic_number + '</p>', 
-			'<p class="details" id="symbol">' + symbol + '</p>',
-			'<p class="details" id="name">' + name + '</p>',
-			'<p class="details" id="atomic_weight">' + atomic_weight + '</p>'
+			'<p class="details text-left" id="atomic_number">' + $atomic_number + '</p>', 
+			'<p class="details" id="symbol">' + $symbol + '</p>',
+			'<p class="details" id="name">' + $name + '</p>',
+			'<p class="details" id="atomic_weight">' + $atomic_weight + '</p>'
 		);
 
-		$elementInfo.css('background-color', elementColor);
-		$elementInfo.css('border', elementBorder);
+		$elementInfo.css('background-color', $elementColor);
+		$elementInfo.css('border', $elementBorder);
 
 
-		var nodes = d3.range(atomic_number + 1).map(function() { return {radius: Math.random() * 12 + 4}; }),
+		var nodes = d3.range($atomic_number + 1).map(function() { return {radius: Math.random() * 12 + 4}; }),
 		    root = nodes[0];
 
 		root.radius = 0;
@@ -45,7 +45,7 @@ var playground = (function() {
 
 		force.start();
 
-		var canvas = d3.select(".atoms").append("canvas")
+		var canvas = d3.select('.atoms').append('canvas')
 		    .attr("width", width)
 		    .attr("height", height);
 
@@ -60,7 +60,7 @@ var playground = (function() {
 		  for (i = 1; i < n; ++i) q.visit(collide(nodes[i]));
 
 		  context.clearRect(0, 0, width, height);
-		  context.fillStyle = elementColor;
+		  context.fillStyle = $elementColor;
 		  context.beginPath();
 		  for (i = 1; i < n; ++i) {
 		    d = nodes[i];
@@ -104,42 +104,49 @@ var playground = (function() {
 	
 	// new element button hides viz and displays tables
 	var elementButton = $newElement.click(function() {
+		var $elementDetails = $('.details'); 
+
 		$viz.hide();
 		d3.select('canvas').remove();
-		$('.details').remove();		
+		$elementDetails.remove();		
 		$tables.show();
 	});
 
 	// element hover events
-	var elementHover = $element.hover(function() {
-		$(this).toggleClass('animated pulse');
-	});
-
 	var seriesHover = $('td').hover(function() {
-		var shake = 'animated shake';
+		var $shake = 'animated shake';
 		var $this = $(this);
-		
+		var $actiSeries = $('.acti-series');
+		var $lantSeries = $('.lant-series');
+
 		if($this.attr('id') === 'acti') {
-			$('.acti-series').toggleClass(shake);
+			$actiSeries.toggleClass($shake);
 		} 
 		
 		else if ($this.attr('id') === 'lant') {
-			$('.lant-series').toggleClass(shake);
+			$lantSeries.toggleClass($shake);
 		}
+	});
+
+	var bigElementHover = $elementInfo.hover(function() {
+		var $bounce = 'animated bounce';
+		var $this = $(this);
+
+		$this.toggleClass($bounce);
 	});
 
 	return {
 		visualization: visualization,
 		elementButton: elementButton,
-		elementHover: elementHover,
-		seriesHover: seriesHover
+		seriesHover: seriesHover,
+		bigElementHover: bigElementHover
 	};
 })();
 
 playground.visualization;
 playground.elementButton;
-playground.elementHover;
 playground.seriesHover;
+playground.bigElementHover;
 
 
 

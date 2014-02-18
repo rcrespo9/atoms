@@ -1,38 +1,38 @@
 $elementborder: 1px solid;
 
 $non-metals: 1,6,7,8,15,16,34;
-$nonmetalscolor: #B1BEA4;
+$nonmetalscolor: #75A3D1;
 
 $alkali-metals: 3,11,19,37,55,87;
-$alkalicolors: #E3CDA4;
+$alkalicolors: #B9D7D9;
 
 $alkaline-metals: 4,12,20,38,56,88;
-$alkalinecolors: #C77966;
+$alkalinecolors: #668284;
 
 $noble-gases: 2,10,18,36,54,86,118;
-$noblegasescolor: #DBBEA2;
+$noblegasescolor: #008F68;
 
 $halogens: 9,17,35,53,85,117;
-$halogenscolor: #A58F78;
+$halogenscolor: #D9411E;
 
 $semi-metals: 5,14,32,33,51,52,84;
-$semimetalscolor: #647168;
+$semimetalscolor: #5FA292;
 
 $basic-metals: 13,31,49,50,81,82,83,113,114,115,116;
-$basicmetalscolor: #703030;
+$basicmetalscolor: #7B3B3B;
 
-$lantcolor: rgb(178,170,164);
-$acticolor: rgb(145,134,126);
+$lantcolor: #3CA2A2;
+$acticolor: #215A6D;
 
-$transitioncolor: #1E2C30;
+$transitioncolor: #493736;
 
 
 
 @mixin non-metals {
 	@each $i in $non-metals {
 		&[data-attribute='#{$i}'] {
-			background-color: $nonmetalscolor;
-			border: $elementborder $nonmetalscolor;
+/*			background-color: $nonmetalscolor;
+			border: $elementborder $nonmetalscolor;*/
 		}
 	}
 }
@@ -58,8 +58,8 @@ $transitioncolor: #1E2C30;
 @mixin noble-gases {
 	@each $i in $noble-gases {
 		&[data-attribute='#{$i}'] {
-			background-color: $noblegasescolor;
-			border: $elementborder $noblegasescolor;
+/*			background-color: $noblegasescolor;
+			border: $elementborder $noblegasescolor;*/
 		}
 	}
 }
@@ -67,8 +67,8 @@ $transitioncolor: #1E2C30;
 @mixin halogens {
 	@each $i in $halogens  {
 		&[data-attribute='#{$i}'] {
-			background-color: $halogenscolor;
-			border: $elementborder $halogenscolor;
+/*			background-color: $halogenscolor;
+			border: $elementborder $halogenscolor;*/
 		}
 	}
 }
@@ -76,8 +76,8 @@ $transitioncolor: #1E2C30;
 @mixin semi-metals {
 	@each $i in $semi-metals {
 		&[data-attribute='#{$i}'] {
-			background-color: $semimetalscolor;
-			border: $elementborder $semimetalscolor;
+/*			background-color: $semimetalscolor;
+			border: $elementborder $semimetalscolor;*/
 		}
 	}
 }
@@ -93,15 +93,15 @@ $transitioncolor: #1E2C30;
 
 @mixin lant-series {
 	td.lant-series, #lant {
-		background-color: $lantcolor;
-		border: $elementborder $lantcolor;
+/*		background-color: $lantcolor;
+		border: $elementborder $lantcolor;*/
 	}
 }
 
 @mixin acti-series {
 	td.acti-series, #acti {
-		background-color: $acticolor;
-		border: $elementborder $acticolor;
+/*		background-color: $acticolor;
+		border: $elementborder $acticolor;*/
 	}
 }
 
