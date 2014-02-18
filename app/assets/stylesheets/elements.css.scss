@@ -132,7 +132,7 @@ html, body {
 
 		.atoms {
 			margin-bottom: 3%;
-			svg {
+			canvas {
 				border: 7px solid $playgroundcolor;
 				border-radius: 7px;
 			}
@@ -191,8 +191,6 @@ html, body {
 			width: 54px;
 			height: 54px;
 			&:not(.empty-cell) {
-				background-color: $playgroundcolor;
-				border: 1px solid $playgroundcolor;
 				border-radius: 6px;
 				cursor: pointer;
 			}

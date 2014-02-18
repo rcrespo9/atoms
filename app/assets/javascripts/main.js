@@ -32,8 +32,7 @@ var playground = (function() {
 
 
 		var nodes = d3.range(atomic_number + 1).map(function() { return {radius: Math.random() * 12 + 4}; }),
-		    root = nodes[0],
-		    color = d3.scale.ordinal().range(colorbrewer.RdGy[11]);
+		    root = nodes[0];
 
 		root.radius = 0;
 		root.fixed = true;
@@ -46,29 +45,32 @@ var playground = (function() {
 
 		force.start();
 
-		var svg = d3.select(".atoms").append("svg")
+		var canvas = d3.select(".atoms").append("canvas")
 		    .attr("width", width)
 		    .attr("height", height);
 
-		svg.selectAll("circle")
-		    .data(nodes.slice(1))
-		  .enter().append("circle")
-		    .attr("r", function(d) { return d.radius; })
-		    .style("fill", function(d, i) { return color(i % 3); });
+		var context = canvas.node().getContext("2d");
 
 		force.on("tick", function(e) {
 		  var q = d3.geom.quadtree(nodes),
-		      i = 0,
+		      i,
+		      d,
 		      n = nodes.length;
 
-		  while (++i < n) q.visit(collide(nodes[i]));
+		  for (i = 1; i < n; ++i) q.visit(collide(nodes[i]));
 
-		  svg.selectAll("circle")
-		      .attr("cx", function(d) { return d.x; })
-		      .attr("cy", function(d) { return d.y; });
+		  context.clearRect(0, 0, width, height);
+		  context.fillStyle = elementColor;
+		  context.beginPath();
+		  for (i = 1; i < n; ++i) {
+		    d = nodes[i];
+		    context.moveTo(d.x, d.y);
+		    context.arc(d.x, d.y, d.radius, 0, 2 * Math.PI);
+		  }
+		  context.fill();
 		});
 
-		svg.on("mousemove", function() {
+		canvas.on("mousemove", function() {
 		  var p1 = d3.mouse(this);
 		  root.px = p1[0];
 		  root.py = p1[1];
@@ -103,7 +105,7 @@ var playground = (function() {
 	// new element button hides viz and displays tables
 	var elementButton = $newElement.click(function() {
 		$viz.hide();
-		d3.select('svg').remove();
+		d3.select('canvas').remove();
 		$('.details').remove();		
 		$tables.show();
 	});
