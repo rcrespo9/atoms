@@ -1,30 +1,30 @@
 $elementborder: 1px solid;
 
 $non-metals: 1,6,7,8,15,16,34;
-$nonmetalscolor: #666A73;
+$nonmetalscolor: #616569;
 
 $alkali-metals: 3,11,19,37,55,87;
-$alkalicolors: #2F3540;
+$alkalicolors: #403D39;
 
 $alkaline-metals: 4,12,20,38,56,88;
-$alkalinecolors: #666A73;
+$alkalinecolors: #807A71;
 
 $noble-gases: 2,10,18,36,54,86,118;
-$noblegasescolor: #8C8681;
+$noblegasescolor: #3B363D;
 
 $halogens: 9,17,35,53,85,117;
-$halogenscolor: #B5AEA6;
+$halogenscolor: #48454C;
 
 $semi-metals: 5,14,32,33,51,52,84;
-$semimetalscolor: #2F3540;
+$semimetalscolor: #A29EA2;
 
 $basic-metals: 13,31,49,50,81,82,83,113,114,115,116;
-$basicmetalscolor: #8C8681;
+$basicmetalscolor: #BFB7AA;
 
 $lantcolor: #B5AEA6;
 $acticolor: #8C8681;
 
-$transitioncolor: #B5AEA6;
+$transitioncolor: #ABA398;
 
 
 
@@ -40,8 +40,8 @@ $transitioncolor: #B5AEA6;
 @mixin alkali-metals {
 	@each $i in $alkali-metals {
 		&[data-attribute='#{$i}'] {
-/*			background-color: $alkalicolors;
-			border: $elementborder $alkalicolors; */
+			background-color: $alkalicolors;
+			border: $elementborder $alkalicolors; 
 		}
 	}
 }
@@ -49,8 +49,8 @@ $transitioncolor: #B5AEA6;
 @mixin alkaline-metals {
 	@each $i in $alkaline-metals {
 		&[data-attribute='#{$i}'] {
-/*			background-color: $alkalinecolors;
-			border: $elementborder $alkalinecolors;*/
+			background-color: $alkalinecolors;
+			border: $elementborder $alkalinecolors;
 		}
 	}
 }
@@ -85,8 +85,8 @@ $transitioncolor: #B5AEA6;
 @mixin basic-metals {
 	@each $i in $basic-metals {
 		&[data-attribute='#{$i}'] {
-/*			background-color: $basicmetalscolor;
-			border: $elementborder $basicmetalscolor;*/
+			background-color: $basicmetalscolor;
+			border: $elementborder $basicmetalscolor;
 		}
 	}
 }
@@ -106,8 +106,8 @@ $transitioncolor: #B5AEA6;
 }
 
 @mixin transitioncolor {
-/*	background-color: $transitioncolor;
-	border: $elementborder $transitioncolor;*/
+	background-color: $transitioncolor;
+	border: $elementborder $transitioncolor;
 }
 
 @mixin transition-metals {
