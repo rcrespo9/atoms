@@ -1,7 +1,5 @@
-###Proton Playground
+== Proton Playground
 
 Proton Playground has made the periodic table of the chemical elements fun again. Simply click on a chemical element, watch its protons come to life, and play with them.
 
 Technologies: Rails 4.0.2, HAML, SCSS, jQuery, d3.js, MongoDB, Bootstrap 3.1, RSpec
-
-Check it out at http://proton-playground.herokuapp.com
