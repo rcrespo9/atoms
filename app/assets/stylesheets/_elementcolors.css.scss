@@ -26,13 +26,22 @@ $acticolor: #474242;
 
 $transitioncolor: #ABA398;
 
-
+@mixin animation {
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
 
 @mixin non-metals {
 	@each $i in $non-metals {
 		&[data-attribute='#{$i}'] {
 			background-color: $nonmetalscolor;
 			border: $elementborder $nonmetalscolor;
+			@include animation;
+			&:hover {
+				background-color: $nonmetalscolor - 27;
+				border: $elementborder $nonmetalscolor - 27;
+			}
 		}
 	}
 }
@@ -41,7 +50,12 @@ $transitioncolor: #ABA398;
 	@each $i in $alkali-metals {
 		&[data-attribute='#{$i}'] {
 			background-color: $alkalicolors;
-			border: $elementborder $alkalicolors; 
+			border: $elementborder $alkalicolors;
+			@include animation;
+			&:hover {
+				background-color: $alkalicolors - 20;
+				border: $elementborder $alkalicolors - 20;
+			} 
 		}
 	}
 }
@@ -51,6 +65,11 @@ $transitioncolor: #ABA398;
 		&[data-attribute='#{$i}'] {
 			background-color: $alkalinecolors;
 			border: $elementborder $alkalinecolors;
+			@include animation;
+			&:hover {
+				background-color: $alkalinecolors - 20;
+				border: $elementborder $alkalinecolors - 20;
+			}
 		}
 	}
 }
@@ -60,6 +79,11 @@ $transitioncolor: #ABA398;
 		&[data-attribute='#{$i}'] {
 			background-color: $noblegasescolor;
 			border: $elementborder $noblegasescolor;
+			@include animation;
+			&:hover {
+				background-color: $noblegasescolor - 20;
+				border: $elementborder $noblegasescolor - 20;
+			}
 		}
 	}
 }
@@ -69,6 +93,11 @@ $transitioncolor: #ABA398;
 		&[data-attribute='#{$i}'] {
 			background-color: $halogenscolor;
 			border: $elementborder $halogenscolor;
+			@include animation;
+			&:hover {
+				background-color: $halogenscolor - 20;
+				border: $elementborder $halogenscolor - 20;
+			}
 		}
 	}
 }
@@ -78,6 +107,11 @@ $transitioncolor: #ABA398;
 		&[data-attribute='#{$i}'] {
 			background-color: $semimetalscolor;
 			border: $elementborder $semimetalscolor;
+			@include animation;
+			&:hover {
+				background-color: $semimetalscolor - 20;
+				border: $elementborder $semimetalscolor - 20;
+			}
 		}
 	}
 }
@@ -87,6 +121,11 @@ $transitioncolor: #ABA398;
 		&[data-attribute='#{$i}'] {
 			background-color: $basicmetalscolor;
 			border: $elementborder $basicmetalscolor;
+			@include animation;
+			&:hover {
+				background-color: $basicmetalscolor - 20;
+				border: $elementborder $basicmetalscolor - 20;
+			}
 		}
 	}
 }
@@ -95,6 +134,11 @@ $transitioncolor: #ABA398;
 	td.lant-series, #lant {
 		background-color: $lantcolor;
 		border: $elementborder $lantcolor;
+			@include animation;
+			&:hover {
+				background-color: $lantcolor - 20;
+				border: $elementborder $lantcolor - 20;
+			}
 	}
 }
 
@@ -102,12 +146,22 @@ $transitioncolor: #ABA398;
 	td.acti-series, #acti {
 		background-color: $acticolor;
 		border: $elementborder $acticolor;
+		@include animation;
+		&:hover {
+			background-color: $acticolor - 20;
+			border: $elementborder $acticolor - 20;
+		}
 	}
 }
 
 @mixin transitioncolor {
 	background-color: $transitioncolor;
 	border: $elementborder $transitioncolor;
+	@include animation;
+	&:hover {
+		background-color: $transitioncolor - 20;
+		border: $elementborder $transitioncolor - 20;
+	}
 }
 
 @mixin transition-metals {
