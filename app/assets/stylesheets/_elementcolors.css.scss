@@ -21,8 +21,8 @@ $semimetalscolor: #A29EA2;
 $basic-metals: 13,31,49,50,81,82,83,113,114,115,116;
 $basicmetalscolor: #BFB7AA;
 
-$lantcolor: #B5AEA6;
-$acticolor: #8C8681;
+$lantcolor: #BFBAB0;
+$acticolor: #474242;
 
 $transitioncolor: #ABA398;
 
@@ -93,15 +93,15 @@ $transitioncolor: #ABA398;
 
 @mixin lant-series {
 	td.lant-series, #lant {
-/*		background-color: $lantcolor;
-		border: $elementborder $lantcolor;*/
+		background-color: $lantcolor;
+		border: $elementborder $lantcolor;
 	}
 }
 
 @mixin acti-series {
 	td.acti-series, #acti {
-/*		background-color: $acticolor;
-		border: $elementborder $acticolor;*/
+		background-color: $acticolor;
+		border: $elementborder $acticolor;
 	}
 }
 
