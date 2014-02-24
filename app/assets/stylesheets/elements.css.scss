@@ -186,7 +186,7 @@ html, body {
 		}
 
 		td {
-			width: 54px;
+			min-width: 54px;
 			height: 54px;
 			&:not(.empty-cell) {
 				border-radius: 6px;
