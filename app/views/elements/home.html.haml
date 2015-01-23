@@ -1,6 +1,9 @@
 %body#home
-	.jumbotron.pull-right.text-left.animated.fadeInRight
-		%h1 Proton Playground
-		%p Have fun with the periodic table of the chemical elements.
-		.button
-			= link_to "Start Now", playground_path
+	.container-fluid.jumbotron-wrap
+		.row
+			.col-lg-6.col-lg-offset-6
+				.jumbotron.text-left.animated.fadeInRight
+					%h1 Proton Playground
+					%p Have fun with the periodic table of the chemical elements.
+					.button
+						= link_to "Start Now", playground_path

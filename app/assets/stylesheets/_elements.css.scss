@@ -10,6 +10,7 @@ $buttonfontsize: .8em;
 $buttonpadding: 13px 25px;
 $mobile: 480px;
 $tablet: 767px;
+$landingBreakPoint: 1295px;
 
 @import 'elementcolors';
 
@@ -34,17 +35,53 @@ body, button {
 	background-size: cover;
 	min-height: 100%;
 	min-width: 100%;
+	position: relative;
+
+	&:before {
+		@include transition(all .2s ease-in);	
+	}
+	
+
+	@media(max-width: $landingBreakPoint) {
+
+		&:before {
+			content: "";
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0,0,0,.8);
+		}		
+	}
+
+	.jumbotron-wrap {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 50%;
+		@include transform(translateY(-50%));
+		@include backface-visibility(hidden);		
+	}
 
 	.jumbotron {
 		background-color: transparent;
 		color: $homecolor;
 		margin-top: 10%;
 
+		@media(max-width: $landingBreakPoint) {
+			color: $bodycolor;
+		}
+
 		h1 {
 			font-family: $headerfont;
 			font-size: 4.7em;
 			font-weight: $headerweight;
 			text-transform: uppercase;
+
+			@media(max-width: $mobile) {
+				font-size: 3.8em;
+			}
 		}
 		
 		p {
@@ -53,7 +90,7 @@ body, button {
 		}
 
 		.button {
-			margin-top: 5%;
+			margin-top: 30px;
 
 			a, a:visited {
 				text-decoration: none;
@@ -67,14 +104,22 @@ body, button {
 				font-family: $bodyfont;
 				font-weight: $bodyweight;
 				font-size: $buttonfontsize;
-				-webkit-transition: all .2s ease-in-out;
-				-moz-transition: all .2s ease-in-out;
-				transition: all .2s ease-in-out;
+				@include transition(all .2s ease-in-out);
 				
 				&:hover {
 					background-color: $homecolor;
 					color: $bodycolor;
 				}
+
+				@media(max-width: $landingBreakPoint) {
+					color: $bodycolor;
+					border-color: $bodycolor;
+
+					&:hover {
+						background-color: $bodycolor;
+						color: $homecolor;
+					}					
+				}				
 			}
 
 		}
