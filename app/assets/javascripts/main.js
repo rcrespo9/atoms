@@ -8,8 +8,8 @@ var playground = (function() {
 
 	// initialize visualization	onclick
 	var visualization = $element.click(function() {
-		var width = 650;
-		var height = 339;
+		var width = 737;
+		var height = 391;
 		var $atomic_number = $(this).data('attribute');
 		var $symbol = $(this).data('symbol');
 		var $name = $(this).data('name');
