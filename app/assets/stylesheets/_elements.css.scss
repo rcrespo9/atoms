@@ -21,6 +21,11 @@ html, body {
 	position: relative;
 }
 
+body {
+	@include transform-style(preserve-3d);
+	@include backface-visibility(hidden);	
+}
+
 body, button {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;	
@@ -60,8 +65,7 @@ body, button {
 		left: 0;
 		right: 0;
 		top: 50%;
-		@include transform(translateY(-50%));
-		@include backface-visibility(hidden);		
+		@include transform(translateY(-50%));	
 	}
 
 	.jumbotron {
@@ -189,7 +193,6 @@ body, button {
 		right: 0;
 		top: 50%;
 		@include transform(translateY(-50%));
-		@include backface-visibility(hidden);
 	}
 
 	.visualization {
