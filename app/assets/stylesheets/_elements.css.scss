@@ -194,7 +194,7 @@ body, button {
 
 	.visualization {
 		@media(max-width: $tablet) {
-			margin-top: 35px;
+			margin-top: 45px;
 		}
 
 		display: none;
@@ -217,7 +217,15 @@ body, button {
 		}
 
 		.big-element {
-			margin-top: 8%;
+
+			@media(min-width: $screen-sm-min) {
+				margin-top: 8%;
+			}
+
+			@media(max-width: $screen-sm-min) {
+				margin-top: 20px;
+			}
+			
 			.element-info {
 				border-radius: 6px;
 				font-family: $bodyfont;
